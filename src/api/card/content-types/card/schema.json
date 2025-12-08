@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "Cards"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "saison": {
+      "type": "enumeration",
+      "enum": [
+        "saison 1",
+        "saison 2"
+      ]
+    }
+  }
+}
