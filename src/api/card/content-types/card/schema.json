@@ -24,12 +24,60 @@
     "name": {
       "type": "string"
     },
+    "number": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "richtext"
+    },
     "saison": {
       "type": "enumeration",
       "enum": [
         "saison 1",
         "saison 2"
       ]
+    },
+    "factions": {
+      "type": "enumeration",
+      "enum": [
+        "Aqua",
+        "Chaos",
+        "Ciel",
+        "Nature",
+        "Ange",
+        "Cosmic",
+        "Démon",
+        "Dragon",
+        "Forêt",
+        "Glace",
+        "Humain",
+        "Orc",
+        "Vampire"
+      ]
+    },
+    "rarity": {
+      "type": "enumeration",
+      "enum": [
+        "Commune",
+        "Peu commune",
+        "Rare",
+        "Ultra rare",
+        "Spécial rare",
+        "Secret rare",
+        "Légendaire rare"
+      ]
+    },
+    "value": {
+      "type": "integer"
+    },
+    "attack": {
+      "type": "integer"
+    },
+    "defense": {
+      "type": "integer"
+    },
+    "buy": {
+      "type": "string"
     }
   }
 }

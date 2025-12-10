@@ -441,19 +441,53 @@ export interface ApiCardCard extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    attack: Schema.Attribute.Integer;
+    buy: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    defense: Schema.Attribute.Integer;
+    description: Schema.Attribute.RichText;
+    factions: Schema.Attribute.Enumeration<
+      [
+        'Aqua',
+        'Chaos',
+        'Ciel',
+        'Nature',
+        'Ange',
+        'Cosmic',
+        'D\u00E9mon',
+        'Dragon',
+        'For\u00EAt',
+        'Glace',
+        'Humain',
+        'Orc',
+        'Vampire',
+      ]
+    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::card.card'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    number: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    rarity: Schema.Attribute.Enumeration<
+      [
+        'Commune',
+        'Peu commune',
+        'Rare',
+        'Ultra rare',
+        'Sp\u00E9cial rare',
+        'Secret rare',
+        'L\u00E9gendaire rare',
+      ]
+    >;
     saison: Schema.Attribute.Enumeration<['saison 1', 'saison 2']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    value: Schema.Attribute.Integer;
   };
 }
 
