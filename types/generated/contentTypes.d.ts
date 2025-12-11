@@ -448,23 +448,26 @@ export interface ApiCardCard extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     defense: Schema.Attribute.Integer;
     description: Schema.Attribute.RichText;
-    factions: Schema.Attribute.Enumeration<
-      [
-        'Aqua',
-        'Chaos',
-        'Ciel',
-        'Nature',
-        'Ange',
-        'Cosmic',
-        'D\u00E9mon',
-        'Dragon',
-        'For\u00EAt',
-        'Glace',
-        'Humain',
-        'Orc',
-        'Vampire',
-      ]
-    >;
+    factions: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Aqua',
+          'Chaos',
+          'Ciel',
+          'Nature',
+          'Ange',
+          'Cosmic',
+          'D\u00E9mon',
+          'Dragon',
+          'For\u00EAt',
+          'Glace',
+          'Humain',
+          'Orc',
+          'Vampire',
+        ]
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::card.card'> &

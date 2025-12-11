@@ -30,16 +30,11 @@
     "description": {
       "type": "richtext"
     },
-    "saison": {
-      "type": "enumeration",
-      "enum": [
-        "saison 1",
-        "saison 2"
-      ]
-    },
     "factions": {
-      "type": "enumeration",
-      "enum": [
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
         "Aqua",
         "Chaos",
         "Ciel",
@@ -53,6 +48,13 @@
         "Humain",
         "Orc",
         "Vampire"
+      ]
+    },
+    "saison": {
+      "type": "enumeration",
+      "enum": [
+        "saison 1",
+        "saison 2"
       ]
     },
     "rarity": {
